@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Moje posty{% endblock %}
+
+{% block content %}
+<section class='user'>
+        <h1>Moje posty</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>tytuł</th>
+                    <th>opis</th>
+                    <th>Autor</th>
+                    <th>data</th>
+                    <th>zdjęcia</th>
+                    <th>akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for information in informations %}
+                <tr>
+                    <td>{{ information.id }}</td>
+                    <td>{{ information.title }}</td>
+                    <td>{{ information.description }}</td>
+                    <td>{{ information.author }}</td>
+                    <td>{{ information.date ? information.date|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                    {% if information.photoPath is defined %}
+                        {% if information.photoPath is empty %}
+                            brak zdjęć
+                            {% else %}
+                            <a href="{{ asset('/uploads_img/' ~ information.photoPath)}}">zdjęcie</a>
+                        {% endif %}
+                        {% else %}
+                            brak zdjęć
+                    {% endif %}
+                </td>
+                    <td>
+                        <a href="{{ path('informations_show', {'id': information.id}) }}">show</a>
+                        {% if is_granted("ROLE_USER") %}
+                            <a href="{{ path('informations_edit', {'id': information.id}) }}">edit</a>
+                        {%endif%}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">brak wpisów</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a class='newInformation' href="{{ path('informations_new') }}">Dodaj nowy</a>
+</section>
+{% endblock %}

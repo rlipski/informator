@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{dane.title}}{% endblock %}
+
+{% block content %}
+
+    <section class="headTitle">
+        <h1>{{dane.title}}</h1>
+    </section>
+        <article class="showArticle">
+            <img class="articleImage" src="
+                {% if dane.photoPath is defined %}
+                    {% if dane.photoPath is empty %}
+                        images/background.png
+                        {% else %}
+                        {{ asset('/uploads_img/' ~ dane.photoPath)}}
+                    {% endif %}
+                    {% else %}
+                        images/background.png
+                {% endif %}
+                  " alt="zdjęcie"/>
+            <div class="postAuthor"><p>autor:  {{autor.email}}</p></div>
+            <div class="postCity"><p>miasto:  {{dane.city}}</p></div>
+            <div class="postCategory"><p>kategoria: {{dane.category}}</p></div>
+            <div class="postDate"><p>data: {{dane.date|date('Y-m-d')}}</p></div>
+            <div class="postDescription"><p> {{dane.description}}</p></div>
+        </article>
+{% endblock %}
+{% block javascripts %}
+        <script type="text/javascript" src="{{asset('js/showArticle.js')}}"></script>
+{% endblock %}

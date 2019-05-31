@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{city_name}}{% endblock %}
+
+{% block content %}
+    <section class="headContentRecipes">
+        <h1>{{city_name}}</h1>
+    </section>
+    <section class="articles">
+        {%for information in dane%}
+            <a href="/artykul/{{information.id}}" class="articlePreview">
+            <img src="
+                    {% if information.photoPath is defined %}
+                        {% if information.photoPath is empty %}
+                            images/background.png
+                            {% else %}
+                            {{ asset('/uploads_img/' ~ information.photoPath)}}
+                        {% endif %}
+                        {% else %}
+                            images/background.png
+                    {% endif %}
+                    " alt="zdjęcie"/>
+                <div class="articleTitle"> {{information.title}}</div>
+                <div class="articleDescription"> {{information.description|length > 30 ? information.description|slice(0, 30) ~ '...' : information.description}}</div>
+            </a>
+        {%endfor%}
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{asset('js/articles.js')}}"></script>
+ {% endblock %}

@@ -1,0 +1,556 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 27-Dec-2018, 13:56:24
+    Author     : Radek
+*/
+@font-face {
+  font-family: ThirstyScriptExtraBoldDemo;
+  src: url(/fonts/ThirstyScriptExtraBoldDemo.otf);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+}
+
+html {
+  min-height: 100vh;
+}
+
+html body {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 1100px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+html body header {
+  z-index: 5;
+  width: 1100px;
+  height: 35px;
+  font-size: 21px;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  background: #635252;
+}
+
+html body main {
+  width: 1100px;
+  min-height: 100vh;
+}
+
+html body footer {
+  width: 1100px;
+  z-index: 3;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-50%, #4b2929), color-stop(#858585), color-stop(150%, #4b2929));
+  background: linear-gradient(#4b2929 -50%, #858585, #4b2929 150%);
+  background-attachment: fixed;
+}
+
+section#logo {
+  float: left;
+  height: 100%;
+  width: 200px;
+  background: #635252;
+}
+
+section#logo a {
+  font-family: ThirstyScriptExtraBoldDemo;
+  background: linear-gradient(-45deg, #23A6D5, #23D5AB);
+  background-size: 240% 240%;
+  -webkit-animation: Gradient 12s ease infinite;
+  animation: Gradient 12s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+nav {
+  width: 900px;
+  float: left;
+}
+
+nav a {
+  display: none;
+  color: #fff;
+}
+
+nav section {
+  float: left;
+}
+
+nav section #menuSection {
+  width: 1100px;
+  height: 30px;
+}
+
+nav ul {
+  list-style-type: none;
+  width: 1100px;
+  z-index: 5;
+}
+
+nav ul li {
+  float: left;
+  width: 225px;
+  background: transparent;
+  height: 35px;
+  background: #635252;
+}
+
+nav ul li ul {
+  position: relative;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  width: 100%;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+nav ul li ul li {
+  width: 100%;
+}
+
+nav ul li:hover ul {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+nav ul li:hover > a {
+  background: #fff;
+  color: #000;
+}
+
+nav ul li:hover > a:after {
+  background: #b20;
+  position: relative;
+  width: 100%;
+  left: 0;
+}
+
+nav ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  color: white;
+  font-weight: 400;
+  background: transparent;
+}
+
+nav ul li a:after {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  width: 0;
+  left: 50%;
+  height: 3px;
+  content: "";
+  position: relative;
+  top: 8px;
+  background: transparent;
+  display: block;
+}
+
+section#mostPopular {
+  width: 1100px;
+  min-height: 400px;
+  float: left;
+  text-align: center;
+}
+
+section#mostPopular h2 {
+  padding: 20px;
+}
+
+section#lastAdded {
+  width: 1100px;
+  height: 400px;
+  text-align: center;
+  float: left;
+  border-top: 1px solid black;
+}
+
+section#lastAdded h2 {
+  padding: 20px;
+}
+
+footer {
+  float: left;
+  width: 100%;
+  height: 200px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-50%, #858585), color-stop(#4b2929), color-stop(150%, #858585));
+  background: linear-gradient(#858585 -50%, #4b2929, #858585 150%);
+  background-attachment: fixed;
+}
+
+footer section {
+  width: 33.3%;
+  float: left;
+  padding: 10px;
+}
+
+footer section a {
+  text-decoration: none;
+  width: 100%;
+  float: left;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+}
+
+section.headContentRecipes {
+  width: 1100px;
+  margin: 0 auto;
+  height: 250px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-50%, #858585), color-stop(#4b2929), color-stop(150%, #858585));
+  background: linear-gradient(#858585 -50%, #4b2929, #858585 150%);
+  background-attachment: fixed;
+}
+
+section.headContentRecipes h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+#latest .headContentRecipes h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  top: 95px;
+  left: 0;
+  right: 0;
+}
+
+.articles {
+  display: -ms-grid;
+  display: grid;
+  z-index: 4;
+  grid-gap: 10px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: 300px;
+      grid-template-rows: 300px;
+  grid-auto-rows: 300px;
+}
+
+.articles a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  margin: 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.articles a img {
+  display: block;
+  min-width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+}
+
+.articles a .articleTitle {
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  line-height: 100%;
+  top: 0;
+  bottom: 0;
+  padding-top: 25%;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.articles a .articleDescription {
+  line-height: 40px;
+  font-size: 18px;
+  height: 40px;
+  width: 100%;
+  display: none;
+  position: relative;
+  top: 100%;
+  background-color: rgba(144, 144, 144, 0.8);
+  visibility: visible;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  opacity: 1;
+}
+
+.articles a:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.articles a:hover .articleTitle {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.articles a:hover .articleDescription {
+  top: calc(100% - 40px);
+  display: block;
+}
+
+#latest > div, #mostPopular > div {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 250px;
+}
+
+#mostPopular .headContentRecipes {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#mostPopular .headContentRecipes h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  left: 0;
+  right: 0;
+  position: relative;
+  z-index: -2;
+  display: block;
+}
+
+form[name=informations] {
+  background: #6fcfb2;
+  margin: 10px auto;
+}
+
+form[name=informations] input, form[name=informations] textarea, form[name=informations] button, form[name=informations] select, form[name=informations] option {
+  height: 40px;
+}
+
+form[name=informations] label {
+  margin: 15px;
+  width: 250px;
+}
+
+section.headTitle {
+  width: 1100px;
+  margin: 0 auto;
+  height: 250px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4b2929), color-stop(#858585), to(#4b2929));
+  background: linear-gradient(#4b2929, #858585, #4b2929);
+  background-attachment: fixed;
+}
+
+section.headTitle h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 40px;
+}
+
+article.showArticle img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+div.postAuthor,
+div.postCity,
+div.postCategory,
+div.postDate {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  display: block;
+  height: 30px;
+  text-align: center;
+  padding: 3px;
+  margin: 3px;
+}
+
+div.postDescription {
+  padding: 10px;
+}
+
+div.postDescription:first-letter {
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media all and (max-width: 1099px) {
+  html body {
+    width: 100%;
+  }
+  html body header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  html body main {
+    width: 100%;
+  }
+  html body footer {
+    width: 100%;
+  }
+  nav {
+    width: 225px;
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-direction: column;
+  }
+  nav a.menuButton {
+    text-decoration: none;
+    color: white;
+    display: block;
+    border-color: white;
+    border-width: 0 0 1px 0px;
+    border-style: solid;
+  }
+  nav a.showMenu {
+    border: none;
+  }
+  nav a.showMenu ~ section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav section {
+    display: none;
+  }
+  nav section ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav section ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    height: 28px;
+  }
+  nav section ul li:hover {
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    height: 100%;
+  }
+  nav section ul li a::after {
+    top: 3px;
+  }
+  section#mostPopular,
+  section#latest,
+  section {
+    width: 100%;
+  }
+  section#mostPopular div,
+  section#latest div,
+  section div {
+    width: 100%;
+  }
+  section#mostPopular .headContentRecipes,
+  section#latest .headContentRecipes,
+  section .headContentRecipes {
+    z-index: 5;
+    margin: 0;
+    width: 100%;
+  }
+  .articles {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media all and (max-width: 699px) {
+  .articles {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

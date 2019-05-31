@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}New Informations{% endblock %}
+
+{% block content %}
+<section class="addEditInformation">
+    <h1>Nowy post</h1>
+
+    {{ include('informations/_form.html.twig') }}
+
+    <a href="{{ path('informations_index') }}">moje posty</a>
+</section>
+
+{% endblock %}

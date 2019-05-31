@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Informator{% endblock %}</title>
+{% block stylesheets %}
+
+<link rel="stylesheet"href="{{asset('css/style.css')}}"/>
+<link rel="stylesheet"href="{{asset('css/user.css')}}"/>{% endblock %}
+<script type="text/javascript" src="http://livejs.com/live.js"></script>
+</head>
+<body>
+    <header>
+        <section id="logo"><h1><a href="{{path('stronaglowna')}}">Informator</a></h1></section>
+            <nav>
+                <a href='#menuSection' class='menuButton'>menu</a>
+
+                <section id="menuSection" >
+                    <ul>
+                        <li><a href="{{path('stronaglowna')}}">strona glówna</a></li>
+                        <li><a href="#">miasto</a>
+                            <ul>
+                                <li><a href="{{path('lublin')}}">Lublin</a></li>
+                                <li><a href="{{path('warszawa')}}">Warszawa</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#">kategoria</a>
+                            <ul>
+                                <li><a href="{{path('informacje')}}">informacje</a></li>
+                                <li><a href="{{path('rozrywka')}}">kultura i rozrywka</a></li>
+                                <li><a href="{{path('sport')}}">sport</a></li>
+                            </ul>
+                        </li>
+
+                        {% block lilogin %}
+                                {% if is_granted("ROLE_ADMIN") %}
+                                    <li>
+                                        <a href="#">{{app.user.username}}</a>
+                                        <ul>
+                                            <li><a href="{{path('informations_index')}}">posty</a></li>
+
+                                            <li><a href="{{path('wyloguj')}}">wyloguj</a></li>
+                                        </ul>
+                                    </li>
+                                    {% elseif is_granted("ROLE_USER") %}
+                                    <li>
+                                        <a href="#">{{app.user.username}}</a>
+                                        <ul>
+                                            <li><a href="{{path('informations_index')}}">posty</a></li>
+                                            <li><a href="{{path('informations_new')}}">dodaj nowe</a></li>
+                                            <li><a href="{{path('wyloguj')}}">wyloguj</a></li>
+                                        </ul>
+                                    </li>
+
+
+
+
+                                    {%else%}
+                                        <li>
+                                            <a href="{{path('app_login')}}">logowanie</a>
+                                            <ul>
+                                                <li><a href="{{path('app_register')}}">Rejestracja</a></li>
+                                            </ul>
+                                        </li>
+                                    {%endif%}
+                            {%endblock%}
+
+
+
+
+                    </ul>
+                </section>
+
+            </nav>
+     </header>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+    <footer>
+        <section class="glowne">
+
+               <a href="{{path('stronaglowna')}}">strona glówna</a>
+               <a href="{{path('lublin')}}">Lublin</a>
+               <a href="{{path('warszawa')}}">Warszawa</a>
+
+        </section>
+        <section class="myAccount">
+             <a href="{{path('informacje')}}">informacje</a>
+               <a href="{{path('rozrywka')}}">kultura i rozrywka</a>
+               <a href="{{path('sport')}}">sport</a>
+        </section>
+        <section class="others">
+            {% if is_granted("ROLE_ADMIN") %}
+
+                                <a href="/wyloguj">{{app.user.username}}</a>
+
+                                  <a href="{{path('informations_index')}}">posty</a>
+                                    <a href="{{path('wyloguj')}}"> użytkownicy</a>
+                                   <a href="{{path('wyloguj')}}">wyloguj</a>
+
+                            {% elseif is_granted("ROLE_USER") %}
+
+                                <a href="/wyloguj">wyloguj</a>
+                                <a href="{{path('informations_index')}}">posty</a>
+
+
+
+
+
+
+                            {%else%}
+
+                                    <a href="{{path('app_login')}}">logowanie</a>
+                                    <a href="{{path('app_register')}}">Rejestracja</a>
+
+                             {%endif%}
+        </section>
+    </footer>
+<script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+
+    {% block javascripts %}
+        {% endblock %}
+</body>
+</html>

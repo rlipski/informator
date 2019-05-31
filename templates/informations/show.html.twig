@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{information.title}}{% endblock %}
+
+{% block content %}
+    <section class="headContentRecipes">
+        <h1>{{information.title}}</h1>
+    </section>
+    <section class="PresentRecipe">
+      
+        
+        <article class="">
+            <img class="articleImage" src="
+                {% if information.photoPath is defined %}
+                    {% if information.photoPath is empty %}
+                        images/background.png
+                        {% else %} 
+                        {{ asset('/uploads_img/' ~ information.photoPath)}}
+                    {% endif %} 
+                    {% else %} 
+                        images/background.png
+                {% endif %}                
+                  " alt="zdjęcie"/>
+            <div class="postAuthor"><p>autor:  {{information.author}}</p></div>
+            <div class="postCity"><p>miasto:  {{information.city}}</p></div>
+            <div class="postCategory"><p>kategoria: {{information.category}}</p></div>
+            <div class="postDate"><p>data: {{information.date|date('Y-m-d')}}</p></div>
+            <div class="postDescription"><p> {{information.description}}</p></div>          
+        </article>
+    
+        
+   
+   
+                          
+                  
+    <a href="{{ path('informations_index') }}">back to list</a>
+
+    <a href="{{ path('informations_edit', {'id': information.id}) }}">edit</a>
+
+    {{ include('informations/_delete_form.html.twig') }}
+
+            
+    </section>
+{% endblock %}
+
+                  
+

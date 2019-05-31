@@ -1,0 +1,60 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <section id="latest">
+        <div>
+            <section class="headContentRecipes">
+                <h1>Ostatnio dodane</h1>
+            </section>
+        </div>
+        <section class="articles">
+            {%for i in dane %}
+                <a href="/artykul/{{i.id}}" class="articlePreview">
+                    <img src="
+                        {% if i.photoPath is defined %}
+                            {% if i.photoPath is empty %}
+                                images/background.png
+                                {% else %}
+                                {{ asset('/uploads_img/' ~ i.photoPath)}}
+                            {% endif %}
+                            {% else %}
+                                images/background.png
+                        {% endif %}
+                        " alt="zdjęcie"/>
+                    <div class="articleTitle"> {{i.title}}</div>
+                    <div class="articleDescription"> {{i.description|length > 30 ? i.description|slice(0, 30) ~ '...' : i.description}}</div>
+                </a>
+            {%endfor%}
+        </section>
+    </section>
+
+    <section id="mostPopular">
+        <div>
+            <section class="headContentRecipes">
+                <h1>Najczęsciej czytane</h1>
+            </section>
+        </div>
+        <section class="articles">
+            {%for j in mostPopular %}
+                <a href="/artykul/{{j.id}}" class="articlePreview">
+                    <img src="
+                        {% if j.photoPath is defined %}
+                            {% if j.photoPath is empty %}
+                                images/background.png
+                                {% else %}
+                                {{ asset('/uploads_img/' ~ j.photoPath)}}
+                            {% endif %}
+                            {% else %}
+                                images/background.png
+                        {% endif %}
+                        " alt="zdjęcie"/>
+                    <div class="articleTitle"> {{j.title}}</div>
+                    <div class="articleDescription">{{j.description|length > 30 ? j.description|slice(0, 30) ~ '...' : j.description}}</div>
+                </a>
+            {%endfor%}
+        </section>
+    </section>
+
+{% endblock %}
+ {% block javascripts %}
+    <script type="text/javascript" src="{{asset('js/articles.js')}}"></script>
+ {% endblock %}

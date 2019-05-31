@@ -1,0 +1,211 @@
+section.login, section.register {
+  width: 1100px;
+  position: relative;
+  top: 40px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #f8f6f6;
+}
+
+section.login div.loginForm, section.login div.RegistrationForm, section.register div.loginForm, section.register div.RegistrationForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #f8f6f6;
+}
+
+section.login div.loginForm label, section.login div.RegistrationForm label, section.register div.loginForm label, section.register div.RegistrationForm label {
+  font-size: 1.5em;
+}
+
+section.login div.loginForm table, section.login div.RegistrationForm table, section.register div.loginForm table, section.register div.RegistrationForm table {
+  margin: 5px auto;
+  width: 50%;
+}
+
+section.login div.loginForm input, section.login div.RegistrationForm input, section.register div.loginForm input, section.register div.RegistrationForm input {
+  height: 40px;
+  margin: 5px;
+  width: 200px;
+  font-size: 16px;
+  border: 0px solid;
+  background: #fff;
+  -webkit-transition: border 0.2s ease-out;
+  transition: border 0.2s ease-out;
+}
+
+section.login div.loginForm input:active, section.login div.loginForm input:focus, section.login div.RegistrationForm input:active, section.login div.RegistrationForm input:focus, section.register div.loginForm input:active, section.register div.loginForm input:focus, section.register div.RegistrationForm input:active, section.register div.RegistrationForm input:focus {
+  border: 2px solid #911d1d;
+}
+
+section.login div.loginForm button, section.login div.RegistrationForm button, section.register div.loginForm button, section.register div.RegistrationForm button {
+  height: 50px;
+  width: 100%;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+section.user {
+  margin: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #f8f6f6;
+}
+
+section.user .table th {
+  padding: 3px;
+  text-align: center;
+}
+
+section.user .table tr:nth-child(odd) {
+  background: #fff;
+}
+
+section.user .table tr:hover {
+  background: #e2e2e2;
+}
+
+section.user .table tr:hover td:hover {
+  background: #dddddd;
+}
+
+section.user .table a {
+  text-decoration: none;
+}
+
+section.user .table a:hover {
+  color: #4d2a2a;
+}
+
+section.user a.newInformation {
+  font-size: 2em;
+  text-decoration: none;
+}
+
+section.user a.newInformation:hover {
+  color: #4d2a2a;
+}
+
+.addEditInformation {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.addEditInformation form[name="informations"] {
+  text-align: left;
+  overflow: hidden;
+  background: #f8f6f6;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-auto-columns: 100%;
+  grid-auto-rows: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.addEditInformation form[name="informations"] input, .addEditInformation form[name="informations"] select {
+  font-size: 1rem;
+}
+
+.addEditInformation form[name="informations"] div#informations {
+  display: -ms-grid;
+  display: grid;
+  padding: 0 50px;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-auto-columns: 100%;
+  grid-auto-rows: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.addEditInformation form[name="informations"] div#informations div {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-columns: 100px 50%;
+      grid-template-columns: 100px 50%;
+  grid-auto-columns: 100px 50%;
+  -ms-grid-rows: 2fr;
+      grid-template-rows: 2fr;
+  grid-auto-rows: 2fr;
+}
+
+.addEditInformation form[name="informations"] div#informations div #informations_date {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media all and (max-width: 699px) {
+  .addEditInformation form[name="informations"] div#informations div {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    grid-auto-columns: 100%;
+    -ms-grid-rows: 40px;
+        grid-template-rows: 40px;
+    grid-auto-rows: 40px;
+  }
+}
+/*# sourceMappingURL=user.css.map */
